@@ -1,6 +1,6 @@
 {
-    "name": "general_blockchain",
-    "short_name": "general_blockchain",
+    "name": "General Blockchain",
+    "short_name": "General Blockchain",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
