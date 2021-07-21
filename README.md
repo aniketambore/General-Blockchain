@@ -19,6 +19,7 @@
 - [Setting up the development environment](#setting-up-the-development-environment)
 - [Compiling and Migrating](#compiling-and-migrating)
 - [Demonstration](#demonstration)
+- [Proof Of Work](#proof-of-work)
 - [Contributing](#contributing)
 
 ## Setting up the development environment
@@ -71,6 +72,30 @@ Therefore we can simply call the specific method which is defined in our Blockch
 <div align="center">
     <img src="zREADME_Content/scanChain_ss.png?raw=true" alt="Scan Chain Screen"/>
 </div>
+
+## Proof Of Work
+- The proof_of_work method is defined in `Blockchain_API/blockchain.py`
+- Verifying the Proof Of Work Algorithm manually
+
+Consider the Block1 and Block2 of the chain
+<div align="center">
+    <img src="zREADME_Content/pow_ss.png?raw=true" alt="Verifying Proof Of Work"/>
+</div>
+
+- Block1 => Proof = 1
+- Block2 => Proof = 533
+
+According to the algorithm :-
+```python
+import hashlib
+
+hash_operation = hashlib.sha256(str(new_proof ** 2 - previous_proof ** 2).encode()).hexdigest()
+```
+The starting 4 character of the *hash_operation* has to be 4 leading zeros ("0000"), then only proof(nonce) is valid.
+<div align="center">
+    <img src="zREADME_Content/pow_cmd.png?raw=true" alt="Checking Proof Of Work"/>
+</div>
+As you can see the starting 4 digits of the hash_operation is 0s, Therefore 533 is a valid proof(nonce).
 
 
 ## Contributing:
