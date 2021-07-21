@@ -42,9 +42,9 @@ You should see output similar to the following:
 Before we can migrate our Flutter app to the blockchain, we need to have a blockchain running.
 Our local blockchain network in running on http://127.0.0.1:5000/
 Therefore we can simply call the specific method which is defined in our Blockchain_API/blockchain.py.
-http://127.0.0.1:5000/get-chain
-http://127.0.0.1:5000/mine-block
-http://127.0.0.1:5000/scan-chain
+- http://127.0.0.1:5000/get-chain
+- http://127.0.0.1:5000/mine-block
+- http://127.0.0.1:5000/scan-chain
 
 ```
 📁 general_blockchain
