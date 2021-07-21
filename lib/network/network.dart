@@ -6,11 +6,11 @@ import 'package:http/http.dart' as http;
 
 class Network {
   Future<GetChainModel> getChain() async {
-    var url = "https://general-blockchain.herokuapp.com/get_chain";
+    var url = "http://127.0.0.1:5000/get_chain";
 
     final response = await http.get(Uri.parse(url));
 
-    print("URL is ${Uri.encodeFull(url)}");
+//    print("URL is ${Uri.encodeFull(url)}");
 
     if (response.statusCode == 200) {
       return GetChainModel.fromJson(json.decode(response.body));
@@ -20,11 +20,11 @@ class Network {
   }
 
   Future<MineBlockModel> mineBlock() async {
-    var url = "https://general-blockchain.herokuapp.com/mine_block";
+    var url = "http://127.0.0.1:5000/mine_block";
 
     final response = await http.get(Uri.parse(url));
 
-    print("URL is ${Uri.encodeFull(url)}");
+//    print("URL is ${Uri.encodeFull(url)}");
 
     if (response.statusCode == 200) {
       return MineBlockModel.fromJson(json.decode(response.body));
@@ -34,11 +34,11 @@ class Network {
   }
 
   Future<ScanBlockModel> scanBlock() async {
-    var url = "https://general-blockchain.herokuapp.com/is_valid";
+    var url = "http://127.0.0.1:5000/is_valid";
 
     final response = await http.get(Uri.parse(url));
 
-    print("URL is ${Uri.encodeFull(url)}");
+//    print("URL is ${Uri.encodeFull(url)}");
 
     if (response.statusCode == 200) {
       return ScanBlockModel.fromJson(json.decode(response.body));

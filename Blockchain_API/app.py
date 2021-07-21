@@ -59,7 +59,11 @@ def is_valid():
         response = {"message": "All good, the blockchain is valid."}
     else:
         response = {"message": "Houston, we have a problem. The Blockchain is not valid."}
-    return jsonify(response), 200
+    response = jsonify(response)
+
+    # Enable Access-Control-Allow-Origin
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response, 200
 
 
 # Running the app
